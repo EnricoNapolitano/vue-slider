@@ -12,3 +12,12 @@ Bonus:
 3- quando il mouse va in hover sullo slider, bloccare l'autoplay e farlo riprendere quando esce
 */
 
+console.log(Vue);
+
+const app = Vue.createApp({
+    data(){
+
+    },
+});
+
+app.mount('#root');
