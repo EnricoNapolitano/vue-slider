@@ -51,8 +51,8 @@
                     <img :src="pic.image" :alt="pic.title">
                 </li>
             </ul>
-            <i class="fa-solid fa-arrow-up fa-2x arrow up"></i>
-            <i class="fa-solid fa-arrow-down fa-2x arrow down"></i>
+            <i class="fa-solid fa-arrow-up fa-2x arrow up" @click="goTo('prev')"></i>
+            <i class="fa-solid fa-arrow-down fa-2x arrow down" @click="goTo('next')"></i>
         </div>
 
         <h2>Title</h2>
