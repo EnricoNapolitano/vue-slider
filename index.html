@@ -47,7 +47,7 @@
 
             <!--THUMBNAILS-->
             <ul>
-                <li v-for="(pic, i) in pictures" :class="{'active' : i === currIndex}"> 
+                <li v-for="(pic, i) in pictures" :class="{'active' : i === currIndex}" @click="currIndex = i"> 
                     <img :src="pic.image" :alt="pic.title">
                 </li>
             </ul>
