@@ -16,7 +16,10 @@ console.log(Vue);
 
 const app = Vue.createApp({
     data(){
-
+       return {
+        currIndex: 0,
+        pictures
+       }
     },
 });
 
