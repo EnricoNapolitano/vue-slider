@@ -34,15 +34,18 @@
         <div class="play-pause">
             <i class="fa-solid fa-play fa-2x play"></i><i class="fa-solid fa-pause fa-2x"></i> <!-- play / pause -->
         </div>
-    
+        
         <div id="main-carousel">
-            <div class="jumbotron">
-                <img src="img/01.webp" alt="Marvel's Spiderman Miles Morale">
+            <!--JUMBOTRON-->
+            <div v-for="(pic, i) in pictures" class="jumbotron" v-show="i===currIndex">
+                <img :src="pic.image" :alt="pic.title">
                 <div class="jumbo-text">
-                     <h1>Marvel's Spiderman Miles Morale</h1>
-                     <p>Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
+                     <h1>{{ pic.title }}</h1>
+                     <p>{{ pic.text }}</p>
                 </div>
             </div>
+
+            <!--THUMBNAILS-->
             <ul>
                 <li v-for="(pic, i) in pictures" :class="{'active' : i === currIndex}"> 
                     <img :src="pic.image" :alt="pic.title">
