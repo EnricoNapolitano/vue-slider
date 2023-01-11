@@ -38,7 +38,7 @@
         
         <div id="main-carousel">
             <!--JUMBOTRON-->
-            <div v-for="(pic, i) in pictures" class="jumbotron" v-show="i===currIndex">
+            <div v-for="(pic, i) in pictures" class="jumbotron" v-show="i===currIndex" @mouseenter="stopAutoPlay" @mouseleave="startAutoPlay">
                 <img :src="pic.image" :alt="pic.title">
                 <div class="jumbo-text">
                      <h1>{{ pic.title }}</h1>

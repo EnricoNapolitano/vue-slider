@@ -184,6 +184,9 @@ footer figure {
 
 
 /**** HOVER ****/
+#main-carousel .jumbotron:hover {
+    cursor: grab;
+}
 #main-carousel li:hover {
     border: 3px solid var(--cs-blue);
     filter: opacity(1) ;

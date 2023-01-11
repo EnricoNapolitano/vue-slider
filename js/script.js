@@ -18,7 +18,8 @@ const app = Vue.createApp({
     data(){
        return {
         currIndex: 0,
-        pictures
+        pictures,
+        autoPlay: null
        }
     },
     methods: {
@@ -32,14 +33,17 @@ const app = Vue.createApp({
         };
       },
       startAutoPlay(){
-        setInterval(() =>{
-          this.currIndex++;
-          if (this.currIndex === this.pictures.length) this.currIndex = 0;
-        }, 2000);
+        this.autoPlay = setInterval(() =>{
+             this.currIndex++;
+            if (this.currIndex === this.pictures.length) this.currIndex = 0;
+          }, 2000);
+      },
+      stopAutoPlay(){
+        clearInterval(this.autoPlay);
       }
     },
     mounted() {
-        this.startAutoPlay()
+        this.startAutoPlay();
     }
 });
 
