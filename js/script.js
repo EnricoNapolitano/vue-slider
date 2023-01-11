@@ -24,19 +24,22 @@ const app = Vue.createApp({
     methods: {
       goTo(par){
         if(par === 'prev'){
-            if(this.currIndex !== 0)
-                this.currIndex--;
-            else {
-                this.currIndex = this.pictures.length - 1;
-            }
+            if(this.currIndex !== 0) this.currIndex--;
+            else this.currIndex = this.pictures.length - 1;
         } else {
-            if(this.currIndex !== this.pictures.length - 1)
-                this.currIndex++;
-            else {
-                this.currIndex = 0;
-            }
+            if(this.currIndex !== this.pictures.length - 1) this.currIndex++;
+            else this.currIndex = 0;
         };
+      },
+      startAutoPlay(){
+        setInterval(() =>{
+          this.currIndex++;
+          if (this.currIndex === this.pictures.length) this.currIndex = 0;
+        }, 2000);
       }
+    },
+    mounted() {
+        this.startAutoPlay()
     }
 });
 
